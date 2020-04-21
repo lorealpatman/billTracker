@@ -1,0 +1,43 @@
+<h3>
+    {{viewTitle}}
+</h3>
+
+<form action="/bill" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{bill._id}}">
+    <div class="form-group">
+        <label>Bill Name</label>
+        <input type="text" class="form-control" name="billName" placeholder="Name of Bill" value="{{bill.billName}}">
+        <div class="text-danger">{{bill.billNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" class="form-control" name="number" placeholder="888-888-8888" value="{{bill.number}}">
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Amount</label>
+            <input type="text" class="form-control" name="amount" placeholder="$0.00" value="{{bill.amount}}">
+            <div class="text-danger">{{bill.amountError}}</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Due Date</label>
+            <input type="text" class="form-control" name="dueDate" placeholder="MM/DD/YYYY" value="{{bill.dueDate}}">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="paid"> Check if bill is paid.</label>
+        <input type="checkbox" id="paid" name="paid" value="paid">
+
+
+
+
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Submit</button>
+        <a class="btn btn-secondary" href="/bill/list"></i>View All</a>
+    </div>
+
+
+</form>

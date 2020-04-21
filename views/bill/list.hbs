@@ -1,0 +1,31 @@
+<h3><a class="btn btn-primary" href="/bill"><i class="fa fa-plus"></i> Add Bill</a> Bill List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Bill Name</th>
+            <th>Number</th>
+            <th>Amount</th>
+            <th>Due Date</th>
+            <th>Paid</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.billName}}</td>
+            <td>{{this.number}}</td>
+            <td>{{this.amount}}</td>
+            <td>{{this.dueDate}}</td>
+            <td>{{this.paid}}</td>
+            <td>
+                <a href="/bill/{{this._id}}"><i class="fa fa-pencil fa-lg text-secondary" aria-hidden="true"
+                        alt="edit"></i></a>
+                <a href="/bill/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure you want to delete this bill?');"><i
+                        class="fa fa-trash fa-lg text-danger" aria-hidden="true" alt="delete"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
